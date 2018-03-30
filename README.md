@@ -1,6 +1,6 @@
-# emergency-vue
+# mpc-vue
 
-> emergency projects based on vue
+> multiply pages componets based on vue-cli
 
 ## Build Setup
 
