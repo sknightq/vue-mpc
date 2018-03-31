@@ -14,29 +14,24 @@ const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 // add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function(name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(
-    baseWebpackConfig.entry[name]
-  )
+Object.keys(baseWebpackConfig.entry).forEach(name => {
+  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
+  console.log(baseWebpackConfig.entry[name]);
 })
 
-const pages = utils.getMultiEntry(
-  './src/' + config.moduleName + '/**/**/*.html'
-)
-console.log(pages)
+const pages = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.html', 'html')
+// console.log(pages)
 let pagesConf = []
 for (let pathname in pages) {
   // 配置生成的html文件，定义路径等
-  const conf = {
+  const pageConf = {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
-    chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
+    chunks: [pathname], // 每个html引用的js模块, 由此看出html和js名字要相同
     inject: true // js插入位置
   }
-  pagesConf.push(new HtmlWebpackPlugin(conf))
+  pagesConf.push(new HtmlWebpackPlugin(pageConf))
 }
-
-
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -64,9 +59,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
-    overlay: config.dev.errorOverlay
-      ? { warnings: false, errors: true }
-      : false,
+    overlay: config.dev.errorOverlay ? { warnings: false, errors: true } : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
@@ -95,7 +88,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
-  ].concat(pagesConf)
+  ].concat(pagesConf) // 增加额外的文件入口配置
 })
 
 module.exports = new Promise((resolve, reject) => {
@@ -113,18 +106,11 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(
         new FriendlyErrorsPlugin({
           compilationSuccessInfo: {
-            messages: [
-              `Your application is running here: http://${
-                devWebpackConfig.devServer.host
-              }:${port}`
-            ]
+            messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
           },
-          onErrors: config.dev.notifyOnErrors
-            ? utils.createNotifierCallback()
-            : undefined
+          onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined
         })
       )
-
       resolve(devWebpackConfig)
     }
   })

@@ -5,20 +5,22 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
 const glob = require('glob')
-const fs = require('fs'),
-  copyStat = fs.stat
+const fs = require('fs')
+const copyStat = fs.stat
 // 获取多级的入口文件
-exports.getMultiEntry = function(globPath) {
-  var entries = {},
+exports.getMultiEntry = function(globPath, type) {
+  let entries = {},
     basename,
     tmp,
     pathname
 
+  // console.log('**************' + __dirname)
+  // console.log(glob.sync(globPath))
   glob.sync(globPath).forEach(function(entry) {
     basename = path.basename(entry, path.extname(entry))
     tmp = entry.split('/').splice(-4)
 
-    var pathsrc = tmp[0] + '/' + tmp[1]
+    let pathsrc = tmp[0] + '/' + tmp[1]
     if (tmp[0] == 'src') {
       pathsrc = tmp[1]
     }
@@ -26,8 +28,12 @@ exports.getMultiEntry = function(globPath) {
     pathname = pathsrc + '/' + basename // 正确输出js和html的路径
     entries[pathname] = entry
 
-    // console.log(pathname+'-----------'+entry);
+    // console.log(pathname + '-----------' + entry)
   })
+
+  if (config.defaultEntery && config.defaultEntery !== '') {
+    entries['index'] = config.defaultEntery[type] + '.' + type
+  }
 
   return entries
 }
@@ -37,14 +43,14 @@ exports.getMultiEntry = function(globPath) {
  * @param{ String } 需要复制的目录
  * @param{ String } 复制到指定的目录
  */
-var filecopy = function(src, dst) {
+const fileCopy = function(src, dst) {
   // 读取目录中的所有文件/目录
   fs.readdir(src, function(err, paths) {
     if (err) {
       throw err
     }
     paths.forEach(function(path) {
-      var _src = src + '/' + path,
+      let _src = src + '/' + path,
         _dst = dst + '/' + path,
         readable,
         writable
@@ -74,21 +80,18 @@ exports.startCopy = function(src, dst) {
   fs.exists(dst, function(exists) {
     // 已存在
     if (exists) {
-      filecopy(src, dst)
+      fileCopy(src, dst)
     } else {
       // 不存在
       fs.mkdir(dst, function() {
-        filecopy(src, dst)
+        fileCopy(src, dst)
       })
     }
   })
 }
 
 exports.assetsPath = function(_path) {
-  const assetsSubDirectory =
-    process.env.NODE_ENV === 'production'
-      ? config.build.assetsSubDirectory
-      : config.dev.assetsSubDirectory
+  const assetsSubDirectory = process.env.NODE_ENV === 'production' ? config.build.assetsSubDirectory : config.dev.assetsSubDirectory
 
   return path.posix.join(assetsSubDirectory, _path)
 }
@@ -112,9 +115,7 @@ exports.cssLoaders = function(options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    const loaders = options.usePostCSS
-      ? [cssLoader, postcssLoader]
-      : [cssLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
       loaders.push({

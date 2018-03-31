@@ -5,9 +5,12 @@
 const path = require('path')
 
 module.exports = {
-  // 网站模块名，例如 http://192.168.0.216:8089/module/app/initlayer.html 中的
-  // 【views】，默认为views，修改这里的配置的同时，也要同时重命名/src/views的这个文件夹名称
-  moduleName: 'views',
+  // 多入口所在位置，默认为views，修改这里的配置的同时，也要同时重命名/src/views的这个文件夹名称
+  entryPath: 'views',
+  defaultEntery: {
+    html: 'index',
+    js: './src/index'
+  },
   dev: {
     env: require('./dev.env'),
     // Paths
@@ -18,7 +21,7 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

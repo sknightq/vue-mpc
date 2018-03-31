@@ -10,10 +10,7 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
-var webpackConfigPromise =
-  process.env.NODE_ENV === 'testing'
-    ? require('./webpack.prod.conf')
-    : require('./webpack.dev.conf')
+var webpackConfigPromise = process.env.NODE_ENV === 'testing' ? require('./webpack.prod.conf') : require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -63,18 +60,13 @@ webpackConfigPromise.then(webpackConfig => {
   app.use(hotMiddleware)
 
   // serve pure static assets
-  var staticPath = path.posix.join(
-    config.dev.assetsPublicPath,
-    config.dev.assetsSubDirectory
-  )
+  var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
   app.use(staticPath, express.static('./static'))
 
-  var uri = 'http://localhost:' + port + '/views/home/list.html'
+  var uri = 'http://localhost:' + port + '/views/moduleA/home.html'
 
   devMiddleware.waitUntilValid(function() {
-    console.log(
-      '> 构建完成，已自动在浏览器打开页面，如未自动打开，请手工复制下面的链接，复制到浏览器里打开。'
-    )
+    console.log('> 构建完成，已自动在浏览器打开页面，如未自动打开，请手工复制下面的链接，复制到浏览器里打开。')
     console.log('> Listening at ' + uri + '\n')
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
       opn(uri)
