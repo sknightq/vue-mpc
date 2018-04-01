@@ -141,9 +141,10 @@ for (let pathname in pages) {
   const pageConf = {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
-    chunks: [pathname], // 每个html引用的js模块
+    chunks: ['vendor', 'manifest',pathname], // 每个html引用的js模块
     inject: true, // js插入位置
-    hash: true
+    hash: true,
+    chunksSortMode: 'dependency'
   }
 
   webpackConfig.plugins.push(new HtmlWebpackPlugin(pageConf))

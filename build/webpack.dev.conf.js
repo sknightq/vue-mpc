@@ -27,7 +27,7 @@ for (let pathname in pages) {
   const pageConf = {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
-    chunks: [pathname], // 每个html引用的js模块, 由此看出html和js名字要相同
+    chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块, 由此看出html和js名字要相同
     inject: true // js插入位置
   }
   pagesConf.push(new HtmlWebpackPlugin(pageConf))
