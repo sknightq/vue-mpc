@@ -10,7 +10,8 @@
 > 由于这个是多页面的项目，肯定存在多页面之间传数据的情况  
 > 公司项目结构是这些d多页面的vue都是用iframe包着  
 > Current Solution (当前解决方式):  
-`
+
+``` 
   import Vue from 'vue'  
   import axios from 'axios'  
   import VueAxios from 'vue-axios'  
@@ -32,7 +33,7 @@
     // get the context of listApp components, in order to update the data of this component and then can render the view  
     listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)  
   }  
-`
+``` 
 > expose a global (mount on window) method in current page (暴露一个全局的方法，挂在再window对象上)  
 > other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)  
 > 欢迎提出其他解决方案  
