@@ -6,36 +6,37 @@
 > 样式使用了scss, 未引入多余的ui  
 
 ## tips
-> Because this is a multiple pages, there must be have the condition that pass params between two pages
-> 由于这个是多页面的项目，肯定存在多页面之间传数据的情况
-> 公司项目结构是这些d多页面的vue都是用iframe包着
-> Current Solution (当前解决方式):
+> Because this is a multiple pages, there must be have the condition that pass params between two pages  
+> 由于这个是多页面的项目，肯定存在多页面之间传数据的情况  
+> 公司项目结构是这些d多页面的vue都是用iframe包着  
+> Current Solution (当前解决方式):  
 `
-  import Vue from 'vue'
-  import axios from 'axios'
-  import VueAxios from 'vue-axios'
-  import listApp from '@/views/rescue/list/listApp'
+  import Vue from 'vue'  
+  import axios from 'axios'  
+  import VueAxios from 'vue-axios'  
+  import listApp from '@/views/rescue/list/listApp'  
 
-  import '@/assets/styles/scss/normalize.scss'
+  import '@/assets/styles/scss/normalize.scss'  
 
-  Vue.use(VueAxios, axios)
+  Vue.use(VueAxios, axios)  
 
-  const vueInstance = new Vue({
-    el: '#list-app',
-    // router,
-    components: { listApp },
-    template: '<list-app/>'
-  })
+  const vueInstance = new Vue({  
+    el: '#list-app',  
+    // router,  
+    components: { listApp },  
+    template: '<list-app/>'  
+  })  
 
-  window.refreshRescueList = function() {
-    // 获得listApp组件上下文,用于修改组件数据，并自动更新view 因为这个是list入口文件，其子组件只有一个listApp
-    // get the context of listApp components, in order to update the data of this component and then can render the view
-    listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)
-  }
+  window.refreshRescueList = function() {  
+    // 获得listApp组件上下文,用于修改组件数据，并自动更新view 因为这个是list入口文件，其子组件只有一个listApp  
+    // get the context of listApp components, in order to update the data of this component and then can render the view  
+    listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)  
+  }  
 `
-> expose a global (mount on window) method in current page (暴露一个全局的方法，挂在再window对象上)
-> other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)
-> 欢迎提出其他解决方案
+> expose a global (mount on window) method in current page (暴露一个全局的方法，挂在再window对象上)  
+> other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)  
+> 欢迎提出其他解决方案  
+
 ## update
 > 2018.4.13 1.增加了scss全局文件引入，可用于在组件里直接使用公共样式变量 2.现在可以监听多目录（不单单只有views目录，可以自己在config/index.js配置）
 
