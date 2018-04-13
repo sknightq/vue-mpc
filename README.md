@@ -36,6 +36,8 @@
 > expose a global (mount on window) method in current page (暴露一个全局的方法，挂在再window对象上)
 > other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)
 > 欢迎提出其他解决方案
+## update
+> 2018.4.13 1.增加了scss全局文件引入，可用于在组件里直接使用公共样式变量 2.现在可以监听多目录（不单单只有views目录，可以自己在config/index.js配置）
 
 ## todo
 > index.html页面似乎热启动有问题  
