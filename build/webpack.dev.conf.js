@@ -16,11 +16,14 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(name => {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-  console.log(baseWebpackConfig.entry[name]);
 })
 
-const pages = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.html', 'html')
-// console.log(pages)
+let pages = {};
+for (let i = 0; i < config.entryPath.length; i ++) {
+  let tempPages = utils.getMultiEntry('./src/' + config.entryPath[i] + '/**/**/*.html', 'html') // 获得入口js文件
+  pages = Object.assign(pages, tempPages);
+}
+console.log(pages)
 let pagesConf = []
 for (let pathname in pages) {
   // 配置生成的html文件，定义路径等

@@ -1,0 +1,17 @@
+// global style file
+// such as:
+
+// clear float
+.clearfix {
+  &:before,
+  &.after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// css box settings
+* {
+  box-sizing: border-box;
+}
