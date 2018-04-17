@@ -11,7 +11,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const entries = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.js', 'js') // 获得JS入口
+let entries = {};
+for (let i = 0; i < config.entryPath.length; i ++) {
+  let tempEntries = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.js', 'js') // 获得入口js文件
+  entries = Object.assign(entries, tempEntries);
+}
 const chunks = Object.keys(entries)
 
 const env = process.env.NODE_ENV === 'testing' ? require('../config/test.env') : require('../config/prod.env')
@@ -136,12 +140,16 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 // 构建生成多页面的HtmlWebpackPlugin配置，主要是循环生成
-const pages = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.html', 'html')
+let pages = {};
+for (let i = 0; i < config.entryPath.length; i ++) {
+  let tempPages = utils.getMultiEntry('./src/' + config.entryPath[i] + '/**/**/*.html', 'html') // 获得入口js文件
+  pages = Object.assign(pages, tempPages);
+}
 for (let pathname in pages) {
   const pageConf = {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
-    chunks: ['vendor', 'manifest',pathname], // 每个html引用的js模块
+    chunks: ['vendor', 'manifest', pathname], // 每个html引用的js模块
     inject: true, // js插入位置
     hash: true,
     chunksSortMode: 'dependency'

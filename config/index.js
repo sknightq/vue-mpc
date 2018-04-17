@@ -6,7 +6,7 @@ const path = require('path')
 
 module.exports = {
   // 多入口所在位置，默认为views，修改这里的配置的同时，也要同时重命名/src/views的这个文件夹名称
-  entryPath: 'views',
+  entryPath: ['views'],
   defaultEntery: {
     html: 'index',
     js: './src/index'
@@ -39,7 +39,7 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-eval-source-map', // 如果要比较舒适的调试的话请用 'source-map', 不过这个会影响编译速度
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help

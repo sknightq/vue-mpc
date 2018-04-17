@@ -5,7 +5,11 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 const glob = require('glob')
-const entries = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.js', 'js') // 获得入口js文件
+let entries = {};
+for (let i = 0; i < config.entryPath.length; i ++) {
+  let tempEntries = utils.getMultiEntry('./src/' + config.entryPath[i] + '/**/**/*.js', 'js') // 获得入口js文件
+  entries = Object.assign(entries, tempEntries);
+}
 const chunks = Object.keys(entries)
 
 function resolve(dir) {
