@@ -16,7 +16,6 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(name => {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-  console.log(baseWebpackConfig.entry[name]);
 })
 
 const pages = utils.getMultiEntry('./src/' + config.entryPath + '/**/**/*.html', 'html')
