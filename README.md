@@ -8,7 +8,7 @@
 ## tips
 > Because this is a multiple pages, there must be have the condition that pass params between two pages  
 > 由于这个是多页面的项目，肯定存在多页面之间传数据的情况  
-> 公司项目结构是这些d多页面的vue都是用iframe包着  
+> 公司项目结构是这些多页面的vue都是用iframe包着  
 > Current Solution (当前解决方式):  
 
 ``` 
@@ -34,12 +34,15 @@
     listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)  
   }  
 ``` 
-> expose a global (mount on window) method in current page (暴露一个全局的方法，挂在再window对象上)  
+> expose a global (mount on window) method in current page (暴露一个全局的方法，挂在window对象上)  
 > other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)  
-> 欢迎提出其他解决方案  
+> 欢迎提出其他解决方案
 
 ## update
-> 2018.4.13   
+> 2018.07.09
+  1. 增加可以线上部署时直接输入跨域域名对跨域配置进行自动配置。例：npm run build http://cors.domain.com 8080。当然你自己需要有个config文件去控制全局的域名配置。
+  2. 增加了静态文件（CDN）的引入，编译时直接插入到页面底部的script中
+> 2018.04.13   
   1.增加了scss全局文件引入，可用于在组件里直接使用公共样式变量   
   2.现在可以监听多目录（不单单只有views目录，可以自己在config/index.js配置）  
 

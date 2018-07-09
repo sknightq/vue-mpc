@@ -2,6 +2,9 @@
 require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
+// npm run build [线上跨域域名] [线上跨域主端口] 方便线上部署更改跨域设置
+process.env.corsDomain = process.argv[2]
+process.env.corsMainPort = process.argv[3] || 80
 
 const ora = require('ora')
 const rm = require('rimraf')

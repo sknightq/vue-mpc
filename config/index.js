@@ -17,6 +17,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
+    externalJs: '/static/utilty.js', // CDN 或者项目公用库静态文件，直接引入
+    // corsMainPort: 30000, // 跨域主端口
+    // corsDomain: 'http://cors.domain.com', // 跨域的域名
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -51,6 +54,9 @@ module.exports = {
 
   build: {
     env: require('./prod.env'),
+    externalJs: '/static/utilty.js', // CDN 或者项目公用库静态文件，直接引入
+    // corsMainPort: process.env.corsMainPort || 30000, // 线上跨域主端口
+    // corsDomain: process.env.corsDomain || 'http://cors.domain.com', // 线上跨域的域名
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

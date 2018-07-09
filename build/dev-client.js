@@ -1,6 +1,6 @@
 /* eslint-disable */
 require('eventsource-polyfill')
-// 可监听多页面修改
+// 可监听多页面修改 用于执行npm run mydev时修改文件时进行热重载
 const hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true')
 
 hotClient.subscribe(function(event) {

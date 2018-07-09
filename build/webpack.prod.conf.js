@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -156,5 +157,14 @@ for (let pathname in pages) {
   }
 
   webpackConfig.plugins.push(new HtmlWebpackPlugin(pageConf))
+  // 添加线上的静态库文件或CDN
+  webpackConfig.plugins.push(new HtmlWebpackExternalsPlugin({
+    externals:[
+      {
+        module: '',
+        entry:config.build.externalJs
+      }
+    ]
+  }))
 }
 module.exports = webpackConfig
