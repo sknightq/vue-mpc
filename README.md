@@ -35,13 +35,22 @@
     listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)  
   }  
 ``` 
-> expose a global (mount on window) method in current page (暴露一个全局的方法，挂在window对象上)  
-> other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)  
+> expose a global (mount on window) method in current page 
+> other pages can get the method through the iframe 
+
+> 暴露一个全局的方法，挂在window对象上
+> 其他页面就可以通过iframe去获取这个页面的相关组件的方法
 > 欢迎提出其他解决方案
 
 #### one code for multiple sites (一套代码部署多个站点)
-> once, you were bored with the PM who pushed you to deploy code to many sites using differnt configurations, which makes you modify the code frequently. (曾经是不是厌烦项目经理催你部署代码到不同站点，但由于不同的配置导致你频繁修改代码)
-> There is a good way, but maybe not the best. (这里有个解决方法)
+> Once, you were bored with the PM who pushed you to deploy code to many sites using different configurations, which makes you modify the code frequently.
+> There is a good way, but maybe not the best.
+> This way is used in following conditions:
+> There are all static files in production environment
+
+> 曾经是不是厌烦项目经理催你部署代码到不同站点，但由于不同的配置导致你频繁修改代码
+> 这里有个解决方法, 但可能不是最好的
+> 适用条件：线上环境都是静态文件（前后端分离），因为静态文件无法读取proccess变量
 ````
 // In configurations file
 'use strict'
@@ -62,15 +71,18 @@ module.exports = {
     externalJS: '/static/utilty2.min.js'
   }
 }
-// In deploy file
+// In deploy file, required in ./config/index.js
 'use strict'
 module.exports = {
-  corsDomain: 'http://example.a.com',
+  corsDomain: 'http://example.b.com',
   corsMainPort: 30000,
-  externalJS: '/static/utilty.min.js'
+  externalJS: '/static/utilty1.min.js'
 }
 
 ````
+> Using `npm run build [configuration name]`. e.g. `npm run build config1`, 'deploy.js' will be replace by new configuration that used in 'config/index.js'
+
+> 用`npm run build [configuration name]`命令来部署，例如：e.g. `npm run build config1`, 'deploy.js' 会被新的配置项取代，这些配置会在'config/index.js' 被使用， 其他业务相关的代码也可以import 'config/index.js'文件用于读取该站点的相关配置
 
 ## update
 > 2018.07.09
