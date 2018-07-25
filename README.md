@@ -6,6 +6,7 @@
 > 样式使用了scss, 未引入多余的ui  
 
 ## tips
+#### pass params between two pages (页面之间传参)
 > Because this is a multiple pages, there must be have the condition that pass params between two pages  
 > 由于这个是多页面的项目，肯定存在多页面之间传数据的情况  
 > 公司项目结构是这些多页面的vue都是用iframe包着  
@@ -37,6 +38,39 @@
 > expose a global (mount on window) method in current page (暴露一个全局的方法，挂在window对象上)  
 > other pages can get the method through the iframe (其他页面就可以通过iframe去获取这个页面的相关组件的方法)  
 > 欢迎提出其他解决方案
+
+#### one code for multiple sites (一套代码部署多个站点)
+> once, you were bored with the PM who pushed you to deploy code to many sites using differnt configurations, which makes you modify the code frequently. (曾经是不是厌烦项目经理催你部署代码到不同站点，但由于不同的配置导致你频繁修改代码)
+> There is a good way, but maybe not the best. (这里有个解决方法)
+````
+// In configurations file
+'use strict'
+module.exports = {
+  default: {
+    corsDomain: 'http://example.a.com',
+    corsMainPort: 30000,
+    externalJS: '/static/utilty.min.js'
+  },
+  config1: {
+    corsDomain: 'http://example.b.com',
+    corsMainPort: 30001,
+    externalJS: '/static/utilt1.min.js'
+  },
+  config2: {
+    corsDomain: 'http://example.c.com',
+    corsMainPort: 30002,
+    externalJS: '/static/utilty2.min.js'
+  }
+}
+// In deploy file
+'use strict'
+module.exports = {
+  corsDomain: 'http://example.a.com',
+  corsMainPort: 30000,
+  externalJS: '/static/utilty.min.js'
+}
+
+````
 
 ## update
 > 2018.07.09
