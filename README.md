@@ -7,7 +7,7 @@
 
 ## tips
 #### pass params between two pages (页面之间传参)
-> Because this is a multiple pages, there must be have the condition that pass params between two pages  
+> Because this is a multiple pages, there must have the condition that pass params between two pages  
 > 由于这个是多页面的项目，肯定存在多页面之间传数据的情况  
 > 公司项目结构是这些多页面的vue都是用iframe包着  
 > Current Solution (当前解决方式):  
@@ -31,12 +31,12 @@
 
   window.refreshRescueList = function() {  
     // 获得listApp组件上下文,用于修改组件数据，并自动更新view 因为这个是list入口文件，其子组件只有一个listApp  
-    // get the context of listApp components, in order to update the data of this component and then can render the view  
+    // get the context of listApp component, in order to update the data of this component and then can render the view  
     listApp.methods.refreshList.apply(vueInstance.$children[0], arguments)  
   }  
 ``` 
-> expose a global (mount on window) method in current page 
-> other pages can get the method through the iframe 
+> expose a global method(mounted on window object) in current page  
+> other pages can get the method through the iframe(window object)  
 
 > 暴露一个全局的方法，挂在window对象上
 > 其他页面就可以通过iframe去获取这个页面的相关组件的方法
@@ -80,9 +80,9 @@ module.exports = {
 }
 
 ````
-> Using `npm run build [configuration name]`. e.g. `npm run build config1`, 'deploy.js' will be replace by new configuration that used in 'config/index.js'
+> Using `npm run build [configuration name]`. e.g. `npm run build config1`, 'deploy.js' will be replaced by new configurations that used in 'config/index.js', and then build task will take these configuation.
 
-> 用`npm run build [configuration name]`命令来部署，例如：e.g. `npm run build config1`, 'deploy.js' 会被新的配置项取代，这些配置会在'config/index.js' 被使用， 其他业务相关的代码也可以import 'config/index.js'文件用于读取该站点的相关配置
+> 用`npm run build [configuration name]`命令来部署，例如：e.g. `npm run build config1`, 'deploy.js' 会被新的配置项取代，这些配置会在'config/index.js' 被使用，其他业务相关的代码也可以import 'config/index.js'文件用于读取该站点的相关配置,也就说敲完部署命令后，deploy.js会先被生成，然后再构建线上代码，在构建线上代码时，这些配置项会被引入到代码里  
 
 ## update
 > 2018.07.09
