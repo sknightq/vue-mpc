@@ -111,6 +111,9 @@ npm run dev
 # 并且可以监听多页面的修改
 npm run mydev
 
+# buld site using different configurations
+npm run build [configuration name]
+
 # build for production with minification
 npm run build
 
