@@ -7,6 +7,7 @@ const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
@@ -34,6 +35,15 @@ for (let pathname in pages) {
     inject: true // js插入位置
   }
   pagesConf.push(new HtmlWebpackPlugin(pageConf))
+  // 添加静态库文件或者CDN
+  pagesConf.push(new HtmlWebpackExternalsPlugin({
+    externals:[
+      {
+        module: '',
+        entry: config.dev.externalJs
+      }
+    ]
+  }))
 }
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
