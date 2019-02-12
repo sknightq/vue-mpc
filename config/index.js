@@ -61,18 +61,12 @@ module.exports = {
     // corsMainPort: deploy.corsMainPort, // 线上跨域主端口
     // corsDomain: deploy.corsDomain, // 线上跨域的域名
     // Template for index.html
-    index: path.resolve(__dirname, "../dist/index.html"),
+    index: path.resolve(__dirname, "../docs/index.html"),
 
     // Paths
-<<<<<<< HEAD
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-=======
-    assetsRoot: path.resolve(__dirname, "../dist"),
-    assetsSubDirectory: "static",
-    assetsPublicPath: "/",
->>>>>>> fb38f3ca1883a99163cded8b15e52fdb88e0420a
 
     /**
      * Source Maps
