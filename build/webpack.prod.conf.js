@@ -162,7 +162,7 @@ for (let pathname in pages) {
     externals:[
       {
         module: '',
-        entry:config.build.externalJs
+        entry: config.build.externalJS
       }
     ]
   }))

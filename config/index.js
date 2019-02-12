@@ -19,7 +19,7 @@ module.exports = {
     assetsPublicPath: "/",
     proxyTable: {},
     // local develop enviroment config
-    externalJs: "/static/utilty.js", // CDN 或者项目公用库静态文件，直接引入
+    externalJS: "/static/utilty.min.js", // CDN 或者项目公用库静态文件，直接引入
     // corsMainPort: 30000, // 跨域主端口
     // corsDomain: 'http://cors.domain.com', // 跨域的域名
 
@@ -57,7 +57,7 @@ module.exports = {
   build: {
     env: require("./prod.env"),
     // production develop enviroment config
-    externalJs: deploy.externalJs, // CDN 或者项目公用库静态文件，直接引入
+    externalJS: deploy.externalJS, // CDN 或者项目公用库静态文件，直接引入
     // corsMainPort: deploy.corsMainPort, // 线上跨域主端口
     // corsDomain: deploy.corsDomain, // 线上跨域的域名
     // Template for index.html

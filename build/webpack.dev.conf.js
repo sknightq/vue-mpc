@@ -40,7 +40,7 @@ for (let pathname in pages) {
     externals:[
       {
         module: '',
-        entry: config.dev.externalJs
+        entry: config.dev.externalJS
       }
     ]
   }))
