@@ -1,17 +1,182 @@
-// global style file
-// such as:
+* {
+  box-sizing: border-box;
+}
 
-// clear float
+[v-cloak]{
+  display: none !important;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
 .clearfix {
   &:before,
-  &.after {
+  &:after {
     content: '';
     display: table;
     clear: both;
   }
 }
 
-// css box settings
-* {
-  box-sizing: border-box;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  margin:0;
+}
+
+.btn {
+  padding: 5px 12px;
+  background-color: $color-main;
+  color: $color-white;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  &:hover,
+  &:active,
+  &:focus,
+  &.active  {
+    cursor: pointer;
+    background-color: darken($color: $color-main, $amount: 10%);
+    color: $color-white;
+  }
+  &.disabled {
+    color: $color-white;
+    pointer-events: none;
+    background-color: $color-main-disabled;
+    cursor: not-allowed;
+  }
+}
+
+input {
+  padding: 3px 5px;
+  &:focus,
+  &:active{
+    outline: lighten($color-blue, 30%) 1px solid;
+  }
+}
+
+.form {
+  .form-group {
+    margin-bottom: 6px;
+    >label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 3px;
+      font-weight: bold;
+    }
+    >input {
+      font-size: 12px;
+      display: block;
+      width: 100%;
+      border: none;
+      height: 26px;
+      line-height: 26px;
+      &.inline-block {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    >textarea {
+      font-size: 12px;
+      width: 100%;
+      border: none;
+    }
+    >select {
+      border: none;
+      height: 26px;
+      line-height: 26px;
+      font-size: 12px;
+    }
+    >button {
+      font-size: 12px;
+      width: 100%;
+    }
+    &:last {
+      margin-bottom: 0;
+    }
+  }
+  .form-group-inline {
+    .form-group {
+      float: left;
+    }
+    &.two-groups {
+      .form-group {
+        width: 49%;
+      }
+      .form-group+.form-group {
+        margin-left: 2%;
+      }
+    }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+/*
+custom checkbox style
+DOM structure: input + label > icon[name="tick"]
+*/
+input.aep-custom-input{
+  display: none !important;
+}
+input.aep-custom-input + label.aep-custom-checkbox{
+  background-color: $color-darken-gray;
+  padding: 10px;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+  &.circle{
+    border-radius: 100%;
+  }
+  &.square{
+    border-radius: 0;
+  }
+  &:hover,
+  &:focus,
+  &:active{
+    background-color: $color-main;
+  }
+  .aep-tick{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+input.aep-custom-input:checked + label.aep-custom-checkbox,
+input.aep-custom-input:hover + label.aep-custom-checkbox,
+input.aep-custom-input:focus + label.aep-custom-checkbox,
+input.aep-custom-input:active + label.aep-custom-checkbox{
+  background-color: $color-main;
+  cursor: pointer;
+}
+
+input.aep-custom-input:disabled + label.aep-custom-checkbox{
+  cursor:not-allowed;
+}
+select {
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  border:none;
+  background-color: #fff;
+}
+.plat-style {
+  height: 2.3rem;
+  line-height: 2.3rem;
+  width: 30%;
+  padding-left: 0.5rem;
+  background: url("/images/arrow.png") no-repeat scroll 10px center #fff;
 }
