@@ -53,7 +53,7 @@ npm run test
 npm run lint
 ```
 ## TODO List
-- [ ] add a demo
+- [x] add a demo
 - [ ] add a image for company structure
 - [x] remove unuseful file in demo
 - [x] using Chinese
