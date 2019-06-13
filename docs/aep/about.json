@@ -1,0 +1,16 @@
+{
+  "moduleId": "46a2844e-df69-41d1-8cc4-ce98074cf32a",
+  "moduleName": "自定义模块平台test",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "revision": 0,
+  "frameworkMajorVersion": 1,
+  "frameworkMinorVersion": 0,
+  "frameworkRevision": 0,
+  "date": "2018-01-01",
+  "developer": "",
+  "url": "http://www.baidu.com",
+  "logoUrl": "/Content/xlogo.png",
+  "logoWidth": 250,
+  "logoHeight": 53
+}

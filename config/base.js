@@ -7,7 +7,7 @@ pages['index'] = {
   template: 'public/index.html',
   filename: 'index.html',
   title: '自定义模块',
-  chunks: ['index'],
+  chunks: ['chunk-vendors', 'chunk-common', 'index'],
   from: '/index',
   to: '/index.html'
 }

@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "width": 230,
+  "items": [
+    {
+      "action": "/api/mod/submenu",
+      "actionType": 0,
+      "groupName": null,
+      "iconUrl": null,
+      "index": 0,
+      "isIndented": false,
+      "name": "自定义管理模块",
+      "targetWidth": 0
+    }
+  ]
+}
