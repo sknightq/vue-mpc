@@ -1,3 +1,10 @@
+/**
+ * Don't use this file !!!
+ * Create some request for platform's request. After registing in * platform, platform will request this dev server to get menu.
+ * 公司定制化东西，不要用这个！！！
+ * 创建了几个用于平台的请求。
+ * 当devServer注册到平台后，平台会向devServer 请求相关菜单配置
+ */
 const cors = require('cors')
 const requests = [
   {
@@ -15,20 +22,10 @@ const requests = [
     file: '../src/static/scripts/subMenu.json',
     type: 'application/json;charset=utf-8'
   }
-  // {
-  //   url: '/api/mod/svcadv',
-  //   file: '',
-  //   type: ''
-  // },
-  // {
-  //   url: '/api/mod/maplayers',
-  //   file: '',
-  //   type: ''
-  // }
 ]
 
 const corsJson = {
-  origin: 'http://dev.azuratech.com:30000',
+  origin: 'http://somedomain:30000',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'P3P'],
   credentials: true,

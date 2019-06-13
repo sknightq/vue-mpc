@@ -1,7 +1,7 @@
 const glob = require('glob')
 const pagesConfig = require('./tpl.config')
 const pages = {}
-const customDiretory = 'dongying'
+const customDiretory = 'custom'
 pages['index'] = {
   entry: 'src/views/app.js',
   template: 'public/index.html',
@@ -11,6 +11,12 @@ pages['index'] = {
   from: '/index',
   to: '/index.html'
 }
+
+/**
+ * @param {array} items string array.
+ * @param {boolean} [first=false] first word whether is upper case.
+ * @returns {string} the camel case string.
+ */
 const toCamelCase = (items, first = false) => {
   const result = []
   for (let i = 0; i < items.length; i++) {
@@ -60,13 +66,8 @@ glob.sync(`src/views/${customDiretory}/**/*.js`).forEach(path => {
     from: `/${diretories.join('/')}`,
     to: `/views/${diretories.join('/')}.html`
   }
-  // 别名设置
-  // rewrites.push({
-  //   from: `/${name}`,
-  //   to: `/views/${name}.html`
-  // })
 })
-console.log(pages)
+// console.log(pages)
 module.exports = {
   envConfig: {
     devDomain: 'http://dev.azuratech.com'

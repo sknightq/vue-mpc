@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from '@/views/dongying/upload/upload.vue'
+import App from '@/views/custom/upload/upload.vue'
 
 new Vue({
   el: '#app', // this id is in public/index.html

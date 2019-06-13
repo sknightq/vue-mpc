@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'dashboard',
-      component: () => import('@/views/dongying/dashboard/summary.vue')
+      component: () => import('@/views/custom/dashboard/summary.vue')
     }
   ]
 })

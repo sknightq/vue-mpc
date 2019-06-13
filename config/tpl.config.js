@@ -4,13 +4,13 @@ module.exports = {
   //   template:xxx, // 指定调用的模板, 不写默认为public/index.html
   //   title:xxx, // 页面title，显示在浏览器tab上的
   // }
-  dongyingPublic: {
+  customPublic: {
     title: '公众参与'
   },
-  dongyingKnowledge: {
+  customKnowledge: {
     title: '环保知识'
   },
-  dongyingUpload: {
+  customUpload: {
     title: '发表上传'
   }
 }

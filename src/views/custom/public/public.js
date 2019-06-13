@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from '@/views/dongying/public/public.vue'
+import App from '@/views/custom/public/public.vue'
 import Icon from '@/components/aepIcon'
 Vue.component('icon', Icon)
 new Vue({

@@ -119,7 +119,6 @@ import icon from "@/components/aepIcon.vue";
 import aepHeader from "@/components/aepHeader.vue";
 import aepFooter from "@/components/aepFooter.vue";
 import aepBottomTool from "@/components/aepBottomTool.vue";
-import util from "@/assets/scripts/utils.js";
 export default {
   components: {
     aepHeader,

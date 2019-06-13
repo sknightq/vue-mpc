@@ -3,11 +3,16 @@ const path = require('path')
 const readline = require('readline')
 const ora = require('ora')
 const rm = require('rimraf')
-const spinner = ora('Getting config for production...\n')
 const chalk = require('chalk')
 const sitesConfig = require('../config/sites.config')
 const siteName = process.argv[2] || 'dev'
 
+const spinner = ora('Getting config for production...\n')
+spinner.start()
+const siteConfig = sitesConfig[siteName]
+spinner.stop()
+
+// Create a nginx config for using in docker
 const changeNginxConfig = () => {
   const nginxSpinner = ora('changing the nginx config file...\n')
   const writeStream = fs.createWriteStream(
@@ -44,11 +49,7 @@ const changeNginxConfig = () => {
   })
 }
 
-spinner.start()
-const siteConfig = sitesConfig[siteName]
-spinner.stop()
-
-// 临时生成deploy文件
+// Create a temp deploy.js file for global config
 const deployPath = path.resolve(__dirname, '../config/deploy.js')
 const deploySpinner = ora('creating the deploy config file...\n')
 deploySpinner.start()

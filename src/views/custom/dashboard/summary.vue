@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <p>in dashboard</p>
+    <p>in dashboard summary</p>
   </div>
 </template>
 <script>

@@ -1,3 +1,6 @@
+/**
+ * This file is ugly
+ */
 import envConfig from '@/config/base.config'
 import deploy from '@/config/deploy'
 export default {

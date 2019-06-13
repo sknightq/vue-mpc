@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from '@/views/dongying/dashboard/summary.vue'
+import App from '@/views/custom/dashboard/summary.vue'
 import router from '@/router/dashboard/summary'
 
 new Vue({

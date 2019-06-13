@@ -1,11 +1,11 @@
 const merge = require('webpack-merge')
-const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
+// const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
 const baseConfig = require('./base')
-// aep框架需要注册验证的一些请求
-const frameRequest = require('./aep')
+// 公司框架需要注册验证的一些请求
+// const frameRequest = require('./aep')
 // const rewrites = [{ from: /\/index/, to: '/index.html' }]
 const rewrites = []
-console.log('before:%O', rewrites)
+// console.log('before:%O', rewrites)
 for (let key in baseConfig.webpack.pages) {
   const page = baseConfig.webpack.pages[key]
   rewrites.push({
@@ -16,7 +16,7 @@ for (let key in baseConfig.webpack.pages) {
 console.log('after:%O', rewrites)
 const devConfig = merge(baseConfig.webpack, {
   devServer: {
-    before: frameRequest,
+    // before: frameRequest,
     port: 30025,
     // 代理地址
     proxy: {
@@ -28,19 +28,19 @@ const devConfig = merge(baseConfig.webpack, {
       }
     },
     historyApiFallback: {
-      // 别名
+      // 别名, history mode
       rewrites
     }
   },
   configureWebpack: {
     devtool: 'source-map',
     plugins: [
-      // 插入额外的aepmod.js
-      new HtmlWebpackTagsPlugin({
-        append: false,
-        publicPath: false,
-        tags: ['http://dev.azuratech.com:30000/scripts/aepmod.js']
-      })
+      // insert CDN js
+      // new HtmlWebpackTagsPlugin({
+      //   append: false,
+      //   publicPath: false,
+      //   tags: ['http://somecdn.js']
+      // })
     ]
   }
 })

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from '@/views/dongying/dashboard/air/index.vue'
+import App from '@/views/custom/dashboard/air/index.vue'
 import router from '@/router/dashboard/air'
 import store from '@/store/dashboard/air'
 
