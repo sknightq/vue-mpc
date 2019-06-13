@@ -1,5 +1,6 @@
 git.DS_Store
 node_modules
+CNAME
 /dist
 
 # local env files

@@ -8,6 +8,13 @@
       <li><a href="/custom/upload">/custom/upload</a></li>
       <li><a href="/custom/dashboard/air">/custom/dashboard/air</a></li>
     </ul>
+    <h4>no nginx config using following</h4>
+    <ul>
+      <li><a href="/views/custom/knowledge.html">/custom/knowledge</a></li>
+      <li><a href="/views/custom/public.html">/custom/public</a></li>
+      <li><a href="/views/custom/upload.html">/custom/upload</a></li>
+      <li><a href="/views/custom/dashboard/air.html">/custom/dashboard/air</a></li>
+    </ul>
   </div>
 </template>
 <script>
