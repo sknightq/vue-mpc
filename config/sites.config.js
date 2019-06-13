@@ -13,8 +13,8 @@ module.exports = {
     defaultArea: '鄞州区',
     serverUrl: 'http://localhost:30099/'
   },
-  dongying: {
-    corsDomain: 'http://172.19.123.66',
+  site1: {
+    corsDomain: 'http://122.19.123.00', // just for example
     corsMainPort: 30000, // 平台端口
     sharePort: 30001, // 基础数据端口
     samplePort: 30011, // 采样端口
