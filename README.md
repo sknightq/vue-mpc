@@ -6,6 +6,10 @@
 ### Multiple pages based on vue-cli2.x
 [based on vue-cli2.x](https://github.com/sknightq/vue-mpc/tree/vue-cli2.x)
 
+## Company Structure
+
+![structure](./structure.png)
+
 ## Description
 Because of the update of the vue-cli, I upated my project. Thanks for the vue-cli3.x, I found that configuring the multiple pages was easier. However, since my company's structure, I added some custom settings.  
 
@@ -23,6 +27,20 @@ Because of the update of the vue-cli, I upated my project. Thanks for the vue-cl
   <p>2. 在 build/prebuild中，我会利用nginx config模板(config/nginx.base.conf)来生成一个新的用于线上docker里的nginx.conf</p>   
   <p>3. 对于某些入口新增了v-router配置，实现多页面里某个入口单页面</p> 
 </details>  
+
+## Deploy(deploy files are not uploaded)  
+#### 1. Static Files  
+```
+npm run site --name=[site-name]
+```
+
+#### 2. With Docker 
+In 'cli' folder, there are two deploy files. One is for building a docker image. The other is for deploying the docker image to production environment if the environment is accessible (can use ssh command)
+``` 
+cd [project]
+bash ./cli/pub_docker.sh
+bash ./cli/deploy.sh
+```
 
 ## Project setup
 ```
