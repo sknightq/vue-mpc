@@ -56,9 +56,25 @@ npm run serve
 ```
 npm run build
 ```
+
 ### Compiles and minifies for specified site
 ```
 npm run site --name=[site-name]
+```
+
+### Compiles and minifies an UMD UI lib (imported by scripts tag)
+```
+npm run build-lib
+```
+
+### Compiles and minifies components with UMD style (import a single component by scripts tag)
+```
+npm run build-all
+```
+
+### Compiles and minifies an icon lib (imported by scripts tag)
+```
+npm run build-icons
 ```
 
 ### Run your tests
@@ -72,8 +88,8 @@ npm run lint
 ```
 ## TODO List
 - [x] add a demo
-- [ ] add a image for company structure
+- [x] add a image for company structure
 - [x] remove unuseful file in demo
 - [x] using Chinese
-- [ ] modify my english syntax
-- [ ] more detail
+- [x] modify my english syntax
+- [x] more detail

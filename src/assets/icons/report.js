@@ -1,6 +1,6 @@
 import Icon from '../../components/aepIcon.vue'
 Icon.register({
-  'report': {
+  report: {
     width: 30,
     height: 30,
     paths: [

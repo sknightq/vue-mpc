@@ -4,9 +4,16 @@ const merge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 const baseConfig = require('./base')
-// const siteConfig = require('./deploy')
+// const siteConfig = require('./index')
 
-const proConfig = merge(baseConfig.webpack, {
+// 获得哪些页面需要插入额外的脚本，这里主要是要插入aepmod.js
+const tagsFilesOpts = []
+for (let key in baseConfig.pages) {
+  if (baseConfig.pages[key].hasAepMod) {
+    tagsFilesOpts.push(baseConfig.pages[key].filename)
+  }
+}
+const proConfig = merge(baseConfig, {
   configureWebpack: {
     plugins: [
       new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn|en-gb/),
@@ -23,7 +30,8 @@ const proConfig = merge(baseConfig.webpack, {
       //     `${siteConfig.corsDomain}:${siteConfig.corsMainPort}${
       //       siteConfig.frameJS
       //     }`
-      //   ]
+      //   ],
+      // files: tagsFilesOpts
       // }),
       // copy some json files to dist for nginx config in docker
       new CopyWebpackPlugin([{ from: 'src/static/scripts', to: 'aep' }])

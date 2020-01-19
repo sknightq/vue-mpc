@@ -2,6 +2,7 @@ git.DS_Store
 node_modules
 CNAME
 /dist
+/lib
 
 # local env files
 .env.local

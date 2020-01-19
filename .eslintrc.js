@@ -16,7 +16,7 @@ module.exports = {
   // 'error' = 2
   rules: {
     // 与prettier插件冲突的设置
-    'prettier/prettier': [2, { singleQuote: true, semi: false }],
+    'prettier/prettier': [2, { singleQuote: true, semi: false, printWidth: 200 }],
 
     // 禁止在条件语句中出现赋值操作符
     // https://cn.eslint.org/docs/rules/no-cond-assign
@@ -104,7 +104,7 @@ module.exports = {
     'class-methods-use-this': 2,
     // 限制圈复杂度, 条件语句最多10句
     // https://cn.eslint.org/docs/rules/complexity
-    complexity: [2, 10],
+    complexity: [0, 10],
     // 要求使用一致的 return 语句
     // https://cn.eslint.org/docs/rules/consistent-return
     'consistent-return': 2,

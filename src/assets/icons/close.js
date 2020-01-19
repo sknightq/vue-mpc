@@ -11,7 +11,13 @@ Icon.register({
         width: 24.3,
         height: 0.8
       },
-      { x: 14.6, y: 2.9, transform: 'matrix(0.7071 -0.7071 0.7071 0.7071 -6.2236 14.9781)', width: 0.8, height: 24.3 }
+      {
+        x: 14.6,
+        y: 2.9,
+        transform: 'matrix(0.7071 -0.7071 0.7071 0.7071 -6.2236 14.9781)',
+        width: 0.8,
+        height: 24.3
+      }
     ]
   }
 })
