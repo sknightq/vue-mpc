@@ -1,1 +1,263 @@
 
+[
+  {
+    "metadata": {
+      "id": "dee8df91-b82e-4d4c-a99a-872360b1d015",
+      "publisherId": "shalldie.background",
+      "publisherDisplayName": "shalldie"
+    },
+    "name": "background",
+    "publisher": "shalldie",
+    "version": "1.1.19"
+  },
+  {
+    "metadata": {
+      "id": "8a0c151b-eb13-4bed-9d49-4a252a118a0c",
+      "publisherId": "michelemelluso.code-beautifier",
+      "publisherDisplayName": "michelemelluso"
+    },
+    "name": "code-beautifier",
+    "publisher": "michelemelluso",
+    "version": "2.2.1"
+  },
+  {
+    "metadata": {
+      "id": "e337c67b-55c2-4fef-8949-eb260e7fb7fd",
+      "publisherId": "Shan.code-settings-sync",
+      "publisherDisplayName": "Shan"
+    },
+    "name": "code-settings-sync",
+    "publisher": "Shan",
+    "version": "3.2.9"
+  },
+  {
+    "metadata": {
+      "id": "d0bfc4ab-1d3a-4487-8782-7cf6027b4fff",
+      "publisherId": "ms-vscode.csharp",
+      "publisherDisplayName": "ms-vscode"
+    },
+    "name": "csharp",
+    "publisher": "ms-vscode",
+    "version": "1.19.1"
+  },
+  {
+    "metadata": {
+      "id": "90a838c3-675b-4b87-b7a5-75ea88432cce",
+      "publisherId": "joelday.docthis",
+      "publisherDisplayName": "joelday"
+    },
+    "name": "docthis",
+    "publisher": "joelday",
+    "version": "0.7.1"
+  },
+  {
+    "metadata": {
+      "id": "e55376f2-3b3e-4916-8dbf-34df2fce687b",
+      "publisherId": "drKnoxy.eslint-disable-snippets",
+      "publisherDisplayName": "drKnoxy"
+    },
+    "name": "eslint-disable-snippets",
+    "publisher": "drKnoxy",
+    "version": "1.2.0"
+  },
+  {
+    "metadata": {
+      "id": "43335a8d-5929-408b-874a-65f08362642c",
+      "publisherId": "file-icons.file-icons",
+      "publisherDisplayName": "file-icons"
+    },
+    "name": "file-icons",
+    "publisher": "file-icons",
+    "version": "1.0.17"
+  },
+  {
+    "metadata": {
+      "id": "38ad8277-d23f-4cfc-becf-c77e41c3f2ee",
+      "publisherId": "spywhere.guides",
+      "publisherDisplayName": "spywhere"
+    },
+    "name": "guides",
+    "publisher": "spywhere",
+    "version": "0.9.3"
+  },
+  {
+    "metadata": {
+      "id": "be992f3f-9f22-4b66-a1d2-ecad04c28a28",
+      "publisherId": "abusaidm.html-snippets",
+      "publisherDisplayName": "abusaidm"
+    },
+    "name": "html-snippets",
+    "publisher": "abusaidm",
+    "version": "0.2.1"
+  },
+  {
+    "metadata": {
+      "id": "a2cec723-5349-460d-9de9-0fd1f8d3456f",
+      "publisherId": "xabikos.JavaScriptSnippets",
+      "publisherDisplayName": "xabikos"
+    },
+    "name": "JavaScriptSnippets",
+    "publisher": "xabikos",
+    "version": "1.7.2"
+  },
+  {
+    "metadata": {
+      "id": "98790d67-10fa-497c-9113-f6c7489207b2",
+      "publisherId": "yzhang.markdown-all-in-one",
+      "publisherDisplayName": "yzhang"
+    },
+    "name": "markdown-all-in-one",
+    "publisher": "yzhang",
+    "version": "2.3.1"
+  },
+  {
+    "metadata": {
+      "id": "3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a",
+      "publisherId": "shd101wyy.markdown-preview-enhanced",
+      "publisherDisplayName": "shd101wyy"
+    },
+    "name": "markdown-preview-enhanced",
+    "publisher": "shd101wyy",
+    "version": "0.3.13"
+  },
+  {
+    "metadata": {
+      "id": "96fa4707-6983-4489-b7c5-d5ffdfdcce90",
+      "publisherId": "esbenp.prettier-vscode",
+      "publisherDisplayName": "esbenp"
+    },
+    "name": "prettier-vscode",
+    "publisher": "esbenp",
+    "version": "1.9.0"
+  },
+  {
+    "metadata": {
+      "id": "f1f59ae4-9318-4f3c-a9b5-81b2eaa5f8a5",
+      "publisherId": "ms-python.python",
+      "publisherDisplayName": "ms-python"
+    },
+    "name": "python",
+    "publisher": "ms-python",
+    "version": "2019.4.12954"
+  },
+  {
+    "metadata": {
+      "id": "a84825e8-5f04-4988-b85a-4942e795bcbe",
+      "publisherId": "burkeholland.simple-react-snippets",
+      "publisherDisplayName": "burkeholland"
+    },
+    "name": "simple-react-snippets",
+    "publisher": "burkeholland",
+    "version": "1.2.2"
+  },
+  {
+    "metadata": {
+      "id": "bda23f2c-3d34-4e3c-a0fa-ca9292433c6a",
+      "publisherId": "gerane.Theme-Hopscotch",
+      "publisherDisplayName": "gerane"
+    },
+    "name": "Theme-Hopscotch",
+    "publisher": "gerane",
+    "version": "0.0.2"
+  },
+  {
+    "metadata": {
+      "id": "513cf511-3894-4ee2-8c34-13ab83ddfd37",
+      "publisherId": "eg2.tslint",
+      "publisherDisplayName": "eg2"
+    },
+    "name": "tslint",
+    "publisher": "eg2",
+    "version": "1.0.43"
+  },
+  {
+    "metadata": {
+      "id": "e310ade6-fe29-42da-a447-3fe493080a97",
+      "publisherId": "kleber-swf.unity-code-snippets",
+      "publisherDisplayName": "kleber-swf"
+    },
+    "name": "unity-code-snippets",
+    "publisher": "kleber-swf",
+    "version": "1.3.0"
+  },
+  {
+    "metadata": {
+      "id": "b0605276-f92b-4616-be91-ea11ec64dd1f",
+      "publisherId": "Unity.unity-debug",
+      "publisherDisplayName": "Unity"
+    },
+    "name": "unity-debug",
+    "publisher": "Unity",
+    "version": "2.7.2"
+  },
+  {
+    "metadata": {
+      "id": "df7dc071-4d1a-488b-9984-2f4fc42331f3",
+      "publisherId": "Tobiah.unity-tools",
+      "publisherDisplayName": "Tobiah"
+    },
+    "name": "unity-tools",
+    "publisher": "Tobiah",
+    "version": "1.1.0"
+  },
+  {
+    "metadata": {
+      "id": "2f5dd8cb-d251-4d70-abfe-ddebcb077483",
+      "publisherId": "octref.vetur",
+      "publisherDisplayName": "octref"
+    },
+    "name": "vetur",
+    "publisher": "octref",
+    "version": "0.21.0"
+  },
+  {
+    "metadata": {
+      "id": "583b2b34-2c1e-4634-8c0b-0b82e283ea3a",
+      "publisherId": "dbaeumer.vscode-eslint",
+      "publisherDisplayName": "dbaeumer"
+    },
+    "name": "vscode-eslint",
+    "publisher": "dbaeumer",
+    "version": "1.9.0"
+  },
+  {
+    "metadata": {
+      "id": "e4ee7751-6514-4731-9cdb-7580ffa9e70b",
+      "publisherId": "MS-CEINTL.vscode-language-pack-zh-hans",
+      "publisherDisplayName": "MS-CEINTL"
+    },
+    "name": "vscode-language-pack-zh-hans",
+    "publisher": "MS-CEINTL",
+    "version": "1.33.2"
+  },
+  {
+    "metadata": {
+      "id": "97a08c5f-6667-4242-a5c5-045dfb6bd4b9",
+      "publisherId": "wayou.vscode-todo-highlight",
+      "publisherDisplayName": "wayou"
+    },
+    "name": "vscode-todo-highlight",
+    "publisher": "wayou",
+    "version": "1.0.4"
+  },
+  {
+    "metadata": {
+      "id": "5a6dc0d5-dc02-4121-8e24-cad33a2ff0af",
+      "publisherId": "ms-vsliveshare.vsliveshare",
+      "publisherDisplayName": "ms-vsliveshare"
+    },
+    "name": "vsliveshare",
+    "publisher": "ms-vsliveshare",
+    "version": "1.0.182"
+  },
+  {
+    "metadata": {
+      "id": "3620b114-6fe8-459b-8c68-99943147069b",
+      "publisherId": "hollowtree.vue-snippets",
+      "publisherDisplayName": "hollowtree"
+    },
+    "name": "vue-snippets",
+    "publisher": "hollowtree",
+    "version": "0.1.11"
+  }
+]
