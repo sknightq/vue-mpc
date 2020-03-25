@@ -1,1 +1,67 @@
 
+{
+  "background.useDefault": false,
+  "background.useFront": false,
+  "background.customImages":[
+    "file:///C:/Users/sknightQian/Pictures/RX-78-2.png"
+    //"file:///C:/Users/sknightQian/Pictures/RX-93.png"
+  ],
+  "sync.forceDownload": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderIndentGuides": false,
+  "workbench.colorTheme": "Hopscotch",
+  "workbench.iconTheme": "file-icons",
+  "window.zoomLevel": 0,
+  "workbench.sideBar.location": "right",
+  "beautify.tabSize": 2,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "vue-html": "html", 
+    "javascript": "javascriptreact"
+  },
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "files.associations": {
+    "*.cshtml": "html"
+    //"*.vue": "html",
+  },
+  "python.pythonPath": "C:\\Users\\sknightqian\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+  "sync.gist": "de8e8bd652f561d47944c417d987a3ce",
+  "sync.quietSync": true,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "tslint.enable": false,
+  "prettier.eslintIntegration":true,
+  "javascript.format.enable": false,
+  "prettier.singleQuote": true,
+  "terminal.integrated.rendererType": "dom",
+  "prettier.printWidth": 120,
+  "prettier.semi": false,
+  "todohighlight.keywords": [
+    {
+        "text": "NOTE:",
+        "color": "#fff",
+        "backgroundColor": "#0a75ff",
+        "isWholeLine": false
+    },
+    {
+        "text": "TEST:",
+        "color": "#fff",
+        "isWholeLine": false,
+        "backgroundColor": "#ff8c01"
+    },
+    {
+        "text": "IMPORTANT:",
+        "color": "#fff",
+        "backgroundColor": "#ff2b0a",
+        "isWholeLine": false
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.minimap.side": "left",
+}
