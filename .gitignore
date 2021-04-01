@@ -20,6 +20,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
-package-lock.json
+*.sw
 .DS_Store
+package-lock.json
