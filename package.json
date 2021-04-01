@@ -1,41 +1,19 @@
 {
-  "name": "new",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-mpc",
+  "version": "0.0.0",
   "scripts": {
-    "serve": "node build/prebuild.js && vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "site": "cross-var node build/prebuild.js $npm_config_name && vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name aepVue --dest lib/packages build/library.js",
-    "build-icons": "vue-cli-service build --target lib --name aepIcons --dest lib/icons build/icons.js",
-    "build-all": "node build/separate.js"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
-    "core-js": "^2.6.11",
-    "moment": "^2.24.0",
-    "vue": "^2.6.11",
-    "vue-axios": "^2.1.5",
-    "vue-router": "^3.1.5",
-    "vue-validator": "^3.0.0-alpha.2",
-    "vue2-datepicker": "^2.13.4",
-    "vuex": "^3.1.2"
+    "vue": "^3.0.5",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.1",
-    "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-service": "^3.12.1",
-    "@vue/eslint-config-prettier": "^4.0.1",
-    "axios": "^0.21.1",
-    "babel-eslint": "^10.0.3",
-    "cors": "^2.8.5",
-    "cross-var": "^1.1.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.2.3",
-    "html-webpack-tags-plugin": "^2.0.17",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^7.3.1",
-    "vue-template-compiler": "^2.6.11",
-    "webpack-merge": "^4.2.2"
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.1.5",
+    "vite-plugin-html": "^2.0.3"
   }
 }
