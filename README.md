@@ -1,8 +1,8 @@
-# Multiple pages based on vite 2.x
+# Multiple pages based on vite2
 
 ## Versions
-### Multiple pages based on vite 2.x
-[based on vue-cli3.x](https://github.com/sknightq/vue-mpc/tree/vue-cli3.x)
+### Multiple pages based on vite2
+[based on vite2](https://github.com/sknightq/vue-mpc/tree/master)
 ### Multiple pages based on vue-cli3.x
 [based on vue-cli3.x](https://github.com/sknightq/vue-mpc/tree/vue-cli3.x)
 ### Multiple pages based on vue-cli2.x
@@ -34,8 +34,8 @@ yarn dev
 ```
 
 ## TODO List
-- [] add a demo
-- [] add ailwindCSS
-- [] inject js in each entry by plugin
-- [] modify my english syntax
-- [] more detail
+- [ ] add a demo
+- [ ] add ailwindCSS
+- [ ] inject js in each entry by plugin
+- [ ] modify my english syntax
+- [ ] more detail
