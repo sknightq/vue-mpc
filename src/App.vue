@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <nav>
-    <a href="/src/views/home/">Home</a>
-    <a href="/src/views/about/">About</a>
-  </nav>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="flex flex-col">
+    <header class="flex-grow-0 shadow">
+      <Nav :items="menuItems" class="flex-row" />
+    </header>
+    <div class="container mx-auto flex-grow flex-wrap">
+      <card>
+        <template #left>
+          <img alt="Vue logo" src="./assets/logo.png" />
+        </template>
+        <template #right>
+          <HelloWorld msg="Hello Vue 3 + Vite" />
+        </template>
+      </card>
+      <card>
+        <template #left>
+          <img alt="Vue logo" src="./assets/logo.png" />
+        </template>
+        <template #right>
+          <HelloWorld msg="Hello Vue 3 + Vite" />
+        </template>
+      </card>
+    </div>
+  </div>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import HelloWorld from '@/components/HelloWorld.vue'
+import Card from '@/components/Card.vue'
+import Nav from '@/components/Nav.vue'
+import { defineComponent, ref } from 'vue'
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+export default defineComponent({
+  components: {
+    Nav,
+    Card,
+    HelloWorld
+  },
+  setup() {
+    const menuItems = ref([
+      {
+        url: '/src/views/home/',
+        name: 'home'
+      },
+      {
+        url: '/src/views/about/',
+        name: 'about'
+      }
+    ])
+    return {
+      menuItems
+    }
+  }
+})
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
