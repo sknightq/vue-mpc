@@ -13,7 +13,7 @@
 1. I'm nothing to do recently  
 2. As you know, the vite is based on ESBuild in development environment. Our multiple pages will cost more time in HRM.   
 ### UI  
-I want to try the tailwindCSS, So I add a cli to add tailwindCSS
+I want to use the tailwindCSS, So I add tailwindcss(postcss) instead of sass
 
 ## Project setup
 ```
